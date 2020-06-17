@@ -29,6 +29,8 @@ public class GroundGenerator : MonoBehaviour
         Vector3 targetPrefabPosition = new Vector3(this.transform.position.x, newY, this.transform.position.z);
         //poprzedni czyli pierwszy generowany ground  jest wyzej jak nastepny , czyli nowy jest nizej
         previousGroundY = targetPrefabPosition.y;
-        Instantiate(groundPrefabs[Random.Range(0, groundPrefabs.Length)], targetPrefabPosition, Quaternion.identity);
+        int indexElementu = groundPrefabs.Length - 1;
+        Instantiate(groundPrefabs[Random.Range(0, indexElementu)], targetPrefabPosition, Quaternion.identity) ;
+        Debug.Log(indexElementu);
     }
 }   
