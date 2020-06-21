@@ -9,6 +9,7 @@ public class GameOverControl : MonoBehaviour
     GameObject gameOverCanvas;
     private void Start()
     {
+        Time.timeScale = 1;
         gameOverCanvas = GameObject.Find("GameOverCanvas");
         if(gameOverCanvas != null)
         {
@@ -22,11 +23,13 @@ public class GameOverControl : MonoBehaviour
         {
             Debug.Log("Sukces");
             successPanel.SetActive(true);
+            Time.timeScale = 0; 
         }
         else if(collision.gameObject.tag == "border")
         {
             Debug.Log("Failuer");
             failPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
